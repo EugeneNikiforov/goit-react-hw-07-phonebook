@@ -3,7 +3,8 @@ import { nanoid } from 'nanoid';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectContacts } from 'redux/contact/contactsSelector';
 import css from './ContactForm.module.scss';
-import { addContactAction } from 'redux/contact/contact-slice';
+// import { addContactAction } from 'redux/contact/contact-slice';
+import { addContact } from 'redux/operations';
 
 export default function ContactForm({ onSubmit }) {
     const [name, setName] = React.useState("");
@@ -28,7 +29,7 @@ export default function ContactForm({ onSubmit }) {
         //     };
         //     // setContacts((state) => [...state, contact]);
         // }
-        dispatch(addContactAction(data))
+        dispatch(addContact(data))
         resetForm();
     };
     const handleChange = (e) => {
